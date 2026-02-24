@@ -25,6 +25,7 @@ const Footer = () => {
                     <motion.img
                         src={footerBg}
                         alt=""
+                        loading="lazy"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true, amount: 0.1 }}
@@ -50,8 +51,8 @@ const Footer = () => {
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     {/* CTA Section - Hero-style entrance */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40, filter: 'blur(5px)' }}
-                        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         style={{ textAlign: 'center', marginBottom: '80px' }}
@@ -84,7 +85,7 @@ const Footer = () => {
                                 Nosotros instalamos esa ventaja.
                             </motion.span>
                         </h2>
-                        <a href="#contact" className="btn btn-primary">
+                        <a href="https://wa.me/18297500718" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                             CONTACTO <span>›</span>
                         </a>
                     </motion.div>
@@ -100,7 +101,7 @@ const Footer = () => {
                         </Link>
 
                         <div className="flex gap-8" style={{ fontSize: '0.75rem' }}>
-                            <Link to="/precios" className="hover:text-white transition-all" style={{ color: 'rgba(255, 255, 255, 0.5)', textDecoration: 'none' }}>Precios</Link>
+
                             <Link to="/" className="hover:text-white transition-all" style={{ color: 'rgba(255, 255, 255, 0.5)', textDecoration: 'none' }}>Privacy Policy</Link>
                             <a href="https://www.instagram.com/adrianmalln/" className="hover:text-white transition-all" style={{ color: 'rgba(255, 255, 255, 0.5)', textDecoration: 'none' }}>Instagram</a>
                         </div>

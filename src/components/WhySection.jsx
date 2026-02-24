@@ -23,7 +23,7 @@ const WhySection = () => {
                     style={{ willChange: 'transform, opacity' }}
                 >
                     <h2 style={{
-                        fontSize: 'clamp(2.1rem, 5.5vw, 4.6rem)',
+                        fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
                         fontWeight: 500,
                         lineHeight: 1.3,
                         color: '#fff',
@@ -45,7 +45,7 @@ const WhySection = () => {
                     style={{ willChange: 'transform, opacity' }}
                 >
                     <h2 style={{
-                        fontSize: 'clamp(2.1rem, 5.5vw, 4.2rem)',
+                        fontSize: 'clamp(2.0rem, 5vw, 2.8rem)',
                         fontWeight: 500,
                         lineHeight: 1.3,
                         color: 'rgba(255,255,255,0.4)',
@@ -67,7 +67,7 @@ const WhySection = () => {
                     style={{ willChange: 'transform, opacity' }}
                 >
                     <h2 style={{
-                        fontSize: 'clamp(2.1rem, 5.5vw, 4.2rem)',
+                        fontSize: 'clamp(2.0rem, 5vw, 2.8rem)',
                         fontWeight: 500,
                         lineHeight: 1.3,
                         color: 'rgba(255,255,255,0.4)',
@@ -89,7 +89,7 @@ const WhySection = () => {
                     style={{ willChange: 'transform, opacity', marginTop: '100px' }}
                 >
                     <h2 style={{
-                        fontSize: 'clamp(2.5rem, 6.5vw, 5.4rem)',
+                        fontSize: 'clamp(2.6rem, 6vw, 3.8rem)',
                         fontWeight: 500,
                         lineHeight: 1.2,
                         color: 'rgba(255,255,255,0.3)',

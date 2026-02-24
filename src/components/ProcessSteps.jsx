@@ -74,8 +74,8 @@ const ProcessSteps = () => {
                             border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
                             border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
                             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.05) !important;
-                            backdrop-filter: blur(20px) !important;
-                            -webkit-backdrop-filter: blur(20px) !important;
+                            backdrop-filter: blur(10px) !important;
+                            -webkit-backdrop-filter: blur(10px) !important;
                         }
                     }
                     `
@@ -85,10 +85,10 @@ const ProcessSteps = () => {
                     {/* Left Column: Title Area */}
                     <div style={{ position: 'sticky', top: '160px' }}>
                         <motion.div
-                            initial={{ opacity: 0, x: -30, filter: 'blur(10px)' }}
-                            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-10%" }}
-                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         >
                             <div style={{
                                 color: '#60A5FA',
@@ -127,10 +127,10 @@ const ProcessSteps = () => {
                             <motion.div
                                 key={index}
                                 className="process-step-card"
-                                initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
-                                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-10%" }}
-                                transition={{ duration: 1.2, delay: index * 0.2, ease: [0.16, 1, 0.3, 1] }}
+                                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                                 style={{
                                     background: 'rgba(255, 255, 255, 0.02)',
                                     borderTop: '1px solid rgba(255, 255, 255, 0.08)',

@@ -30,7 +30,7 @@ const DemoSection = () => {
                     zIndex: 0,
                 }}
             >
-                <img src={heroBg} alt="Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={heroBg} alt="Background" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
             <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', position: 'relative', zIndex: 10, width: '100%' }}>
@@ -56,8 +56,8 @@ const DemoSection = () => {
                     </motion.h2>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-                        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.4 }}
                         style={{

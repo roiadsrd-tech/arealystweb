@@ -113,8 +113,8 @@ const FAQ = () => {
                             style={{
                                 position: 'relative',
                                 background: 'rgba(10, 10, 10, 0.4)',
-                                backdropFilter: 'blur(20px)',
-                                WebkitBackdropFilter: 'blur(20px)',
+                                backdropFilter: 'blur(10px)',
+                                WebkitBackdropFilter: 'blur(10px)',
                                 border: '1px solid rgba(255, 255, 255, 0.1)',
                                 borderRadius: '20px',
                                 overflow: 'hidden'

@@ -1,6 +1,6 @@
-
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import solutionBg from '../assets/thats why we built company2.jpg';
 
 const SolutionIntro = () => {
@@ -125,8 +125,8 @@ const SolutionIntro = () => {
                                 Trabaja menos. <span style={{ fontWeight: 700 }}>Cierra más.</span>
                             </p>
 
-                            <a href="#contact" className="btn btn-primary" style={{ display: 'inline-block', marginBottom: '180px' }}>
-                                GET IN TOUCH <span>›</span>
+                            <a href="https://wa.me/18297500718" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'inline-block', marginBottom: '180px' }}>
+                                CONTACTO <span>›</span>
                             </a>
                         </motion.div>
                     </motion.div>

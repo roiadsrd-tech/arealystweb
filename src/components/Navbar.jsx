@@ -40,11 +40,11 @@ const Navbar = () => {
 
                 <div className="flex items-center gap-8">
                     <div className="hidden md-flex items-center gap-8">
-                        <Link to="/" onClick={() => scrollToSection('#how-it-works')} className="text-secondary transition-all hover:text-white" style={{ fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none' }}>Cómo funciona</Link>
-                        <Link to="/" onClick={() => scrollToSection('#features')} className="text-secondary transition-all hover:text-white" style={{ fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none' }}>Funciones</Link>
+                        <Link to="/agent" className="text-secondary transition-all hover:text-white" style={{ fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none' }}>Arealyst Agent</Link>
+                        <Link to="/system" className="text-secondary transition-all hover:text-white" style={{ fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none' }}>Arealyst System</Link>
                         <Link to="/precios" className="text-secondary transition-all hover:text-white" style={{ fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none' }}>Precios</Link>
                     </div>
-                    <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('#contact'); }} className="btn btn-primary">
+                    <a href="https://wa.me/18297500718" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                         CONTACTO
                         <span>›</span>
                     </a>

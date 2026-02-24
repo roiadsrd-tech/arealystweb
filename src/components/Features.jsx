@@ -121,19 +121,21 @@ const Features = () => {
                         align-items: center !important;
                     }
                     .system-main-container {
-                        margin-top: 100px !important;
+                        margin-top: 60px !important;
                         width: 90vw !important;
                         max-width: 560px !important;
                         height: auto !important;
                         aspect-ratio: 16 / 9 !important;
                         margin-left: auto !important;
                         margin-right: auto !important;
+                        display: flex !important;
+                        justify-content: center !important;
                     }
                     .system-scaler {
                         width: 560px !important;
                         height: 315px !important;
-                        transform: scale(calc(min(90vw, 560px) / 560));
-                        transform-origin: top left;
+                        transform: scale(calc(min(90vw, 560px) / 560)) !important;
+                        transform-origin: top center !important;
                     }
                 }
                 `
@@ -394,6 +396,7 @@ const Features = () => {
                                                     zIndex: 2,
                                                     pointerEvents: 'none'
                                                 }}
+                                                loading="lazy"
                                             />
 
                                             {/* Internal Screen Content (Masked to fit image) */}
@@ -442,7 +445,7 @@ const Features = () => {
                                                         <div style={{ color: '#0A84FF', display: 'flex', alignItems: 'center' }}>
                                                             <ChevronLeft size={22} strokeWidth={2.5} />
                                                             <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                                                                <img src={arelyProfile} alt="Arealyst Agent" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                                <img src={arelyProfile} alt="Arealyst Agent" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                             </div>
                                                         </div>
                                                         <div style={{ flex: 1, marginLeft: '4px' }}>
@@ -848,7 +851,7 @@ const Features = () => {
                                                     {/* Sidebar Header (Branding with arely.jpg) */}
                                                     <div style={{ padding: '4px', display: 'flex', justifyContent: 'center', borderBottom: '1px solid rgba(255,255,255,0.05)', marginBottom: '2px' }}>
                                                         <div style={{ width: '32px', height: '32px', borderRadius: '6px', overflow: 'hidden', border: '1.5px solid #3B82F6' }}>
-                                                            <img src={arelyProfile} alt="Arealyst" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                            <img src={arelyProfile} alt="Arealyst" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                         </div>
                                                     </div>
 

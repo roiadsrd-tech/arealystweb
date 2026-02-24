@@ -1,12 +1,12 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import heroBg from '../assets/bg3.jpg';
 import LogoGrid from './LogoGrid';
 
 const Hero = () => {
     return (
-        <section className="relative flex flex-col items-center justify-between" style={{ minHeight: '100vh', paddingTop: '120px' }}>
+        <section className="relative flex flex-col items-center justify-between" style={{ minHeight: '100vh', paddingTop: '115px' }}>
             <style dangerouslySetInnerHTML={{
                 __html: `
                 @media (max-width: 768px) {
@@ -25,6 +25,11 @@ const Hero = () => {
                     .mobile-highlight {
                         font-weight: 700 !important;
                         color: #ffffff !important;
+                    }
+                }
+                @media (min-width: 769px) {
+                    .md-hidden {
+                        display: none !important;
                     }
                 }
                 `
@@ -50,8 +55,8 @@ const Hero = () => {
                 }} />
             </motion.div>
 
-            {/* Empty top space for flex alignment */}
-            <div style={{ height: '60px' }}></div>
+            {/* Empty top space removed for desktop */}
+            <div className="md-hidden" style={{ height: '60px' }}></div>
 
             <div className="container text-center hero-content" style={{ position: 'relative', zIndex: 1, padding: '0 12px' }}>
                 <motion.div
@@ -63,6 +68,28 @@ const Hero = () => {
                         ease: [0.2, 0.65, 0.3, 0.9]
                     }}
                 >
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        style={{
+                            fontSize: 'clamp(0.55rem, 1vw, 0.95rem)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.2em',
+                            color: '#ffffff',
+                            marginBottom: '24px',
+                            fontWeight: 600,
+                            background: 'rgba(0, 0, 0, 0.4)',
+                            padding: '2px 10px',
+                            borderRadius: '100px',
+                            display: 'inline-block',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            backdropFilter: 'blur(8px)',
+                            WebkitBackdropFilter: 'blur(8px)'
+                        }}
+                    >
+                        Chats que Convierten.
+                    </motion.p>
                     <h1 className="hero-main-headline" style={{
                         fontSize: 'clamp(3.5rem, 10vw, 5.5rem)',
                         lineHeight: 1.1,
@@ -98,8 +125,8 @@ const Hero = () => {
                             ease: [0.2, 0.65, 0.3, 0.9]
                         }}
                     >
-                        <a href="#contact" className="btn btn-primary">
-                            GET IN TOUCH <span>›</span>
+                        <a href="https://wa.me/18297500718" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                            CONTACTO <span>›</span>
                         </a>
                     </motion.div>
                 </motion.div>

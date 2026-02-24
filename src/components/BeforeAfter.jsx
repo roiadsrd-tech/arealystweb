@@ -30,7 +30,7 @@ const BeforeAfter = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         style={{
                             fontSize: 'clamp(3rem, 5vw, 4.5rem)',
                             fontWeight: 400,
@@ -46,10 +46,10 @@ const BeforeAfter = () => {
                     </motion.h2>
                     <motion.p
                         className="before-after-subtext"
-                        initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-                        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         style={{
                             fontSize: '1.2rem',
                             color: 'rgba(255, 255, 255, 0.7)',

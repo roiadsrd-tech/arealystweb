@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import pricingBgDefault from '../assets/price1.png';
 import pricingBgNew from '../assets/price2.png';
+
+const MotionLink = motion(Link);
 
 const Pricing = ({ showTitle = true, showBg = true, customBg = pricingBgNew }) => {
     const featuresA = [
@@ -90,8 +93,8 @@ const Pricing = ({ showTitle = true, showBg = true, customBg = pricingBgNew }) =
                             borderRadius: '24px',
                             background: 'rgba(10, 10, 10, 0.4)',
                             border: '1px solid rgba(255, 255, 255, 0.15)',
-                            backdropFilter: 'blur(20px)',
-                            WebkitBackdropFilter: 'blur(20px)',
+                            backdropFilter: 'blur(10px)',
+                            WebkitBackdropFilter: 'blur(10px)',
                             textAlign: 'left',
                             display: 'flex',
                             flexDirection: 'column',
@@ -130,33 +133,33 @@ const Pricing = ({ showTitle = true, showBg = true, customBg = pricingBgNew }) =
                             ))}
                         </ul>
 
-                        <motion.a
-                            href="#contact"
+                        <a
+                            href="https://wa.me/18297500718"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn btn-primary"
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
                             style={{
                                 marginTop: 'auto',
                                 width: '100%'
                             }}
                         >
                             7 DÍAS DE PRUEBA <span>›</span>
-                        </motion.a>
+                        </a>
                     </motion.div>
 
                     {/* Opción B */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         style={{
                             padding: '32px',
                             borderRadius: '24px',
                             background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 35, 128, 0.45) 60%, rgba(0, 71, 255, 0.65) 100%)',
                             border: '1px solid rgba(0, 71, 255, 0.3)',
-                            backdropFilter: 'blur(20px)',
-                            WebkitBackdropFilter: 'blur(20px)',
+                            backdropFilter: 'blur(10px)',
+                            WebkitBackdropFilter: 'blur(10px)',
                             boxShadow: '0 20px 60px rgba(0, 71, 255, 0.3), 0 0 80px rgba(0, 71, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                             textAlign: 'left',
                             display: 'flex',
@@ -211,18 +214,18 @@ const Pricing = ({ showTitle = true, showBg = true, customBg = pricingBgNew }) =
                             ))}
                         </ul>
 
-                        <motion.a
-                            href="#contact"
+                        <a
+                            href="https://wa.me/18297500718"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn btn-primary"
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
                             style={{
                                 marginTop: 'auto',
                                 width: '100%'
                             }}
                         >
                             14 DÍAS DE PRUEBA <span>›</span>
-                        </motion.a>
+                        </a>
                     </motion.div>
                 </div>
 

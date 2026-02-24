@@ -133,7 +133,34 @@ const ComparisonTable = () => {
 
     return (
         <section style={{ padding: '120px 0', backgroundColor: '#000' }}>
-            <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                @media (max-width: 768px) {
+                    .comparison-table-header div {
+                        flex-direction: column !important;
+                        align-items: flex-start !important;
+                        gap: 2px !important;
+                    }
+                    .comparison-table th, .comparison-table td {
+                        padding: 12px 10px !important;
+                        font-size: 0.75rem !important;
+                    }
+                    .comparison-table td div {
+                        font-size: 0.8rem !important;
+                    }
+                    .comparison-table td div + div {
+                        font-size: 0.65rem !important;
+                    }
+                    .comparison-table {
+                        min-width: 450px !important;
+                    }
+                    .comparison-container {
+                        padding: 0 10px !important;
+                    }
+                }
+                `
+            }} />
+            <div className="comparison-container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
                 <div style={{
                     width: '100%',
                     overflowX: 'auto',
@@ -141,17 +168,17 @@ const ComparisonTable = () => {
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     background: 'transparent'
                 }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px' }}>
+                    <table className="comparison-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '800px' }}>
                         <thead>
                             <tr>
                                 <th style={{ ...headerCellStyle, width: '35%' }}></th>
-                                <th style={headerCellStyle}>
+                                <th style={headerCellStyle} className="comparison-table-header">
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <span>Arealyst Agent</span>
                                         <span style={{ fontSize: '0.8rem', opacity: 0.5 }}>RD$20,000</span>
                                     </div>
                                 </th>
-                                <th style={headerCellStyle}>
+                                <th style={headerCellStyle} className="comparison-table-header">
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <span>Arealyst Agent + System</span>
                                         <span style={{ fontSize: '0.8rem', opacity: 0.5 }}>RD$23,000</span>

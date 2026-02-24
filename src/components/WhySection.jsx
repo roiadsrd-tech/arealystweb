@@ -1,89 +1,114 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-
-
-const textBlocks = [
-    "Pusiste anuncios en Instagram. Los interesados llegan. El celular explota.",
-    "Intentas responderle a todos... pero nunca te pones al día. Le contestas a uno y entran 5 más.",
-    "Mientras estás con tu familia... alguien más responde primero y se queda con el cliente.",
-    "No estás perdiendo por falta de ganas. Estás perdiendo por falta de un sistema."
-];
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const WhySection = () => {
-    const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
-    // Calculate the scroll trigger point for the final text block (index 4)
-    // The image reveal should start when we reach the last block
-    const imageRevealTrigger = 4 / textBlocks.length; // 0.8 (80% through the scroll)
-
-    // Map scroll progress to black overlay opacity
-    // From 1.0 (fully black) to 0.15 (revealing image with contrast)
-    const overlayOpacity = useTransform(
-        scrollYProgress,
-        [0, imageRevealTrigger, 1],
-        [1, 1, 0.15]
-    );
-
     return (
-        <div
-            ref={containerRef}
-            style={{
-                height: `${textBlocks.length * 40}vh`,
-                position: 'relative'
-            }}
-        >
-            {/* Fixed Background Image Layer (z-index: -2) REMOVED */}
+        <section id="why" style={{
+            backgroundColor: '#000',
+            padding: '240px 20px',
+            position: 'relative',
+            zIndex: 10,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }}>
+            <div style={{ maxWidth: '1000px', width: '100%', display: 'flex', flexDirection: 'column', gap: '200px' }}>
 
-            {/* Black Overlay (z-index: -1) - Fixed to black as image is removed */}
-            <div
-                style={{
-                    position: 'fixed',
-                    inset: 0,
-                    zIndex: -1,
-                    backgroundColor: '#000000',
-                }}
-            />
+                {/* Block 1 */}
+                <motion.div
+                    initial={{ opacity: 0.2, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ willChange: 'transform, opacity' }}
+                >
+                    <h2 style={{
+                        fontSize: 'clamp(2.1rem, 5.5vw, 4.6rem)',
+                        fontWeight: 500,
+                        lineHeight: 1.3,
+                        color: '#fff',
+                        letterSpacing: '-0.03em',
+                        textAlign: 'left'
+                    }}>
+                        Pusiste anuncios en Instagram.<br />
+                        <span style={{ color: 'rgba(255,255,255,0.4)' }}>Los interesados llegan.</span><br />
+                        El celular explota.
+                    </h2>
+                </motion.div>
 
-            {/* Scrollable Text Content */}
-            <div style={{ position: 'relative', zIndex: 1 }}>
-                {textBlocks.map((text, index) => {
-                    return (
-                        <div
-                            key={index}
-                            style={{
-                                height: '40vh',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                padding: '0 15%'
-                            }}
-                        >
-                            <motion.h2
-                                initial={{ opacity: 0, filter: 'blur(10px)' }}
-                                whileInView={{ opacity: 1, filter: 'blur(0px)' }}
-                                viewport={{ once: true, amount: 0.5 }}
-                                transition={{ duration: 1.5, delay: index === 0 ? 0.4 : 1.2, ease: [0.16, 1, 0.3, 1] }}
-                                style={{
-                                    fontSize: 'clamp(1.4rem, 4vw, 2.6rem)',
-                                    fontWeight: 300,
-                                    color: 'rgba(255, 255, 255, 0.8)',
-                                    textAlign: 'center',
-                                    maxWidth: '900px',
-                                    lineHeight: 1.2,
-                                    letterSpacing: '-0.02em'
-                                }}
-                            >
-                                {text}
-                            </motion.h2>
-                        </div>
-                    );
-                })}
+                {/* Block 2 */}
+                <motion.div
+                    initial={{ opacity: 0.2, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ willChange: 'transform, opacity' }}
+                >
+                    <h2 style={{
+                        fontSize: 'clamp(2.1rem, 5.5vw, 4.2rem)',
+                        fontWeight: 500,
+                        lineHeight: 1.3,
+                        color: 'rgba(255,255,255,0.4)',
+                        letterSpacing: '-0.03em',
+                        textAlign: 'left'
+                    }}>
+                        Intentas responderle a todos...<br />
+                        <span style={{ color: '#fff' }}>pero nunca te pones al día.</span><br />
+                        Le contestas a uno y entran 5 más.
+                    </h2>
+                </motion.div>
+
+                {/* Block 3 */}
+                <motion.div
+                    initial={{ opacity: 0.2, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ willChange: 'transform, opacity' }}
+                >
+                    <h2 style={{
+                        fontSize: 'clamp(2.1rem, 5.5vw, 4.2rem)',
+                        fontWeight: 500,
+                        lineHeight: 1.3,
+                        color: 'rgba(255,255,255,0.4)',
+                        letterSpacing: '-0.03em',
+                        textAlign: 'left'
+                    }}>
+                        Mientras estás con tu familia...<br />
+                        <span style={{ color: '#fff' }}>alguien más responde primero</span><br />
+                        y se queda con tu cliente.
+                    </h2>
+                </motion.div>
+
+                {/* Conclusion */}
+                <motion.div
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-20% 0px -10% 0px" }}
+                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ willChange: 'transform, opacity', marginTop: '100px' }}
+                >
+                    <h2 style={{
+                        fontSize: 'clamp(2.5rem, 6.5vw, 5.4rem)',
+                        fontWeight: 500,
+                        lineHeight: 1.2,
+                        color: 'rgba(255,255,255,0.3)',
+                        letterSpacing: '-0.03em',
+                        textAlign: 'left'
+                    }}>
+                        No estás perdiendo por falta de ganas.<br />
+                        <span style={{
+                            fontWeight: 500,
+                            background: 'linear-gradient(90deg, #fff 0%, var(--accent-color, #3b82f6) 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text'
+                        }}>Estás perdiendo por falta de un sistema.</span>
+                    </h2>
+                </motion.div>
+
             </div>
-        </div>
+        </section>
     );
 };
 

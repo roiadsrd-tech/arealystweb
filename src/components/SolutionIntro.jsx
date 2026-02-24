@@ -12,7 +12,6 @@ const SolutionIntro = () => {
 
     // Background starts revealing earlier (at 5% scroll) to ensure it's first
     const bgOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1]);
-    const bgBlur = useTransform(scrollYProgress, [0.05, 0.25], [10, 0]);
 
     return (
         <div ref={containerRef} style={{ height: '140vh', position: 'relative' }}>
@@ -23,7 +22,7 @@ const SolutionIntro = () => {
                         padding: 0 10px !important;
                     }
                     .solution-headline {
-                        font-size: 3.1rem !important;
+                        font-size: 2.4rem !important;
                     }
                 }
                 `
@@ -40,7 +39,6 @@ const SolutionIntro = () => {
                         width: '100%',
                         height: '100%',
                         opacity: 1,
-                        filter: useTransform(bgBlur, (v) => `blur(${v}px)`),
                         zIndex: -1,
                         pointerEvents: 'none'
                     }}
@@ -65,8 +63,8 @@ const SolutionIntro = () => {
                     >
                         <motion.h2
                             variants={{
-                                hidden: { opacity: 0, y: 40, filter: 'blur(15px)' },
-                                visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                                hidden: { opacity: 0, y: 40 },
+                                visible: { opacity: 1, y: 0 }
                             }}
                             transition={{ duration: 2.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
                             className="solution-headline"
@@ -86,8 +84,8 @@ const SolutionIntro = () => {
 
                         <motion.h3
                             variants={{
-                                hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
-                                visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                                hidden: { opacity: 0, y: 30 },
+                                visible: { opacity: 1, y: 0 }
                             }}
                             transition={{ duration: 2, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
                             style={{
@@ -115,7 +113,7 @@ const SolutionIntro = () => {
                                 color: '#EDECE4',
                                 opacity: 0.8
                             }}>
-                                Instalamos IA que responde en Instagram y WhatsApp, agenda citas sola y organiza todo para que no pierdas ningún cliente.
+                                Responde en Instagram y WhatsApp, agenda sola y organiza todo.
                             </p>
 
                             <p style={{
@@ -124,10 +122,10 @@ const SolutionIntro = () => {
                                 marginBottom: '60px',
                                 color: '#fff'
                             }}>
-                                Deja de trabajar más horas. <span style={{ fontWeight: 700 }}>Empieza a cerrar más clientes.</span>
+                                Trabaja menos. <span style={{ fontWeight: 700 }}>Cierra más.</span>
                             </p>
 
-                            <a href="#contact" className="btn btn-primary">
+                            <a href="#contact" className="btn btn-primary" style={{ display: 'inline-block', marginBottom: '180px' }}>
                                 GET IN TOUCH <span>›</span>
                             </a>
                         </motion.div>

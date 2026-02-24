@@ -40,6 +40,7 @@ const Pricing = ({ showTitle = true, showBg = true, customBg = pricingBgNew }) =
                     <img
                         src={customBg}
                         alt=""
+                        loading="lazy"
                         style={{
                             width: '100%',
                             height: '100%',

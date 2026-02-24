@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import heroBg from '../assets/hero3.JPG';
+import heroBg from '../assets/bg3.jpg';
 import LogoGrid from './LogoGrid';
 
 const Hero = () => {
@@ -18,6 +18,13 @@ const Hero = () => {
                     }
                     .hero-btn-container {
                         display: none !important;
+                    }
+                    .hero-main-headline {
+                        font-size: 2.8rem !important;
+                    }
+                    .mobile-highlight {
+                        font-weight: 700 !important;
+                        color: #ffffff !important;
                     }
                 }
                 `
@@ -48,14 +55,15 @@ const Hero = () => {
 
             <div className="container text-center hero-content" style={{ position: 'relative', zIndex: 1, padding: '0 12px' }}>
                 <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.98, filter: 'blur(10px)' }}
-                    animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                    initial={{ opacity: 0, y: 30, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    style={{ willChange: 'transform, opacity' }}
                     transition={{
                         duration: 1.2,
                         ease: [0.2, 0.65, 0.3, 0.9]
                     }}
                 >
-                    <h1 style={{
+                    <h1 className="hero-main-headline" style={{
                         fontSize: 'clamp(3.5rem, 10vw, 5.5rem)',
                         lineHeight: 1.1,
                         marginBottom: '48px',
@@ -67,8 +75,8 @@ const Hero = () => {
                     </h1>
 
                     <motion.p
-                        initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{
                             duration: 1.2,
                             delay: 0.2,
@@ -77,13 +85,13 @@ const Hero = () => {
                         className="text-secondary hero-subtext"
                         style={{ fontSize: 'clamp(1.15rem, 2vw, 1.2rem)', maxWidth: '650px', margin: '0 auto 48px auto', color: '#EDECE4' }}
                     >
-                        Instalamos sistemas con IA para negocios que quieren responder más rápido y cerrar más ventas.
+                        Instalamos sistemas con IA para negocios que quieren responder <span className="mobile-highlight">más rápido</span> y cerrar <span className="mobile-highlight">más ventas</span>.
                     </motion.p>
 
                     <motion.div
                         className="hero-btn-container"
-                        initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
-                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{
                             duration: 1.2,
                             delay: 0.4,

@@ -56,9 +56,18 @@ const Footer = () => {
                         transition={{ duration: 1, ease: "easeOut" }}
                         style={{ textAlign: 'center', marginBottom: '80px' }}
                     >
+                        <style dangerouslySetInnerHTML={{
+                            __html: `
+                            @media (max-width: 768px) {
+                                .mobile-bold {
+                                    font-weight: 500 !important;
+                                }
+                            }
+                            `
+                        }} />
                         <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.2, marginBottom: '80px', fontWeight: 300, color: '#fff' }}>
-                            El que responde tarde, pierde.<br />
-                            El que tiene sistema, gana.
+                            El que responde tarde, <span className="mobile-bold">pierde.</span><br />
+                            El que tiene sistema, <span className="mobile-bold">gana.</span>
                             <motion.span
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}

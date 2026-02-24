@@ -5,11 +5,11 @@ import { Minus, Plus, Zap, MessageCircle, Database, LayoutList, TrendingUp, Layo
 const BeforeAfter = () => {
 
     const beforeList = [
-        "Mensajes en Instagram y WhatsApp sin orden.",
-        "Respondes cuando puedes, no cuando el cliente escribe.",
-        "Preguntas repetidas todos los días.",
-        "Citas anotadas en libreta o Excel.",
-        "No sabes quién está listo para comprar."
+        { desktop: "Mensajes en Instagram y WhatsApp sin orden.", mobile: "Mensajes sin orden." },
+        { desktop: "Respondes cuando puedes, no cuando el cliente escribe.", mobile: "Respondes tarde." },
+        { desktop: "Preguntas repetidas todos los días.", mobile: "Repites lo mismo todos los días." },
+        { desktop: "Citas anotadas en libreta o Excel.", mobile: "Citas mal apuntadas." },
+        { desktop: "No sabes quién está listo para comprar.", mobile: "No sabes quién va a comprar." }
     ];
 
     const afterList = [
@@ -26,6 +26,7 @@ const BeforeAfter = () => {
 
                 <div style={{ textAlign: 'center', marginBottom: '100px' }}>
                     <motion.h2
+                        className="before-after-headline"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -44,6 +45,7 @@ const BeforeAfter = () => {
                         <span style={{ color: '#fff' }}>Después control.</span>
                     </motion.h2>
                     <motion.p
+                        className="before-after-subtext"
                         initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
                         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         viewport={{ once: true }}
@@ -77,6 +79,18 @@ const BeforeAfter = () => {
                             right: auto !important;
                             background: radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 70%) !important;
                         }
+                        .before-after-headline {
+                            font-size: 2.8rem !important;
+                        }
+                        .before-after-subtext {
+                            font-size: 1.05rem !important;
+                            margin-top: 40px !important;
+                        }
+                        .desktop-text { display: none !important; }
+                        .mobile-text { display: inline !important; }
+                    }
+                    @media (min-width: 769px) {
+                        .mobile-text { display: none !important; }
                     }
                     `
                 }} />
@@ -152,7 +166,8 @@ const BeforeAfter = () => {
                                 >
                                     <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ef4444', opacity: 0.6 }} />
                                     <p style={{ color: 'rgba(255, 255, 255, 0.3)', fontSize: '1rem', fontWeight: 300, margin: 0 }}>
-                                        {item}
+                                        <span className="desktop-text">{item.desktop}</span>
+                                        <span className="mobile-text">{item.mobile}</span>
                                     </p>
                                 </motion.div>
                             ))}

@@ -12,9 +12,9 @@ import BeforeAfter from './components/BeforeAfter';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Precios from './pages/Precios';
-import ArealystAgent from './pages/ArealystAgent';
-import ArealystSystem from './pages/ArealystSystem';
+const Precios = React.lazy(() => import('./pages/Precios'));
+const ArealystAgent = React.lazy(() => import('./pages/ArealystAgent'));
+const ArealystSystem = React.lazy(() => import('./pages/ArealystSystem'));
 
 
 const LandingPage = ({ whySectionRef, globalBgOpacity, isVisible, whyScroll, progressBarFill }) => (
@@ -108,25 +108,27 @@ function App() {
         </motion.div>
       )}
 
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar />
-            <LandingPage
-              whySectionRef={whySectionRef}
-              globalBgOpacity={globalBgOpacity}
-              isVisible={isVisible}
-              whyScroll={whyScroll}
-              progressBarFill={progressBarFill}
-            />
-            <Footer />
-          </>
-        } />
-        <Route path="/precios" element={<Precios />} />
-        <Route path="/agent" element={<ArealystAgent />} />
-        <Route path="/system" element={<ArealystSystem />} />
+      <React.Suspense fallback={<div style={{ height: '100vh', backgroundColor: '#000' }} />}>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <LandingPage
+                whySectionRef={whySectionRef}
+                globalBgOpacity={globalBgOpacity}
+                isVisible={isVisible}
+                whyScroll={whyScroll}
+                progressBarFill={progressBarFill}
+              />
+              <Footer />
+            </>
+          } />
+          <Route path="/precios" element={<Precios />} />
+          <Route path="/agent" element={<ArealystAgent />} />
+          <Route path="/system" element={<ArealystSystem />} />
 
-      </Routes>
+        </Routes>
+      </React.Suspense>
     </div>
   );
 }

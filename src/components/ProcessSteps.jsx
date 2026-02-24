@@ -5,17 +5,17 @@ const ProcessSteps = () => {
     const steps = [
         {
             number: "01",
-            title: "Analizamos tu proceso",
+            title: "Analizamos",
             description: "Vemos qué te preguntan, cómo agendas, y dónde se pierden los leads."
         },
         {
             number: "02",
-            title: "Instalamos Arealyst",
+            title: "Instalamos",
             description: "Lo personalizamos con tu información, lo entrenamos y lo ponemos a funcionar."
         },
         {
             number: "03",
-            title: "Mejoramos constantemente",
+            title: "Mejoramos",
             description: "No lo dejamos solo. Revisamos resultados, ajustamos respuestas y mejoramos el sistema cada mes."
         }
     ];
@@ -23,7 +23,7 @@ const ProcessSteps = () => {
 
 
     return (
-        <section id="how-it-works" style={{ padding: '160px 0', position: 'relative', overflow: 'hidden', backgroundColor: '#000' }}>
+        <section id="how-it-works" className="process-section-container" style={{ padding: '160px 0', position: 'relative', overflow: 'hidden', backgroundColor: '#000' }}>
             {/* Subtle Blue Circles Background */}
             <div style={{
                 position: 'absolute',
@@ -62,6 +62,9 @@ const ProcessSteps = () => {
                 <style dangerouslySetInnerHTML={{
                     __html: `
                     @media (max-width: 768px) {
+                        .process-section-container {
+                            padding-top: 40px !important;
+                        }
                         .process-steps-boxes {
                             margin-top: 180px !important;
                         }
@@ -113,7 +116,7 @@ const ProcessSteps = () => {
                                 lineHeight: 1.6,
                                 fontWeight: 400
                             }}>
-                                En menos de 7 días, tu sistema de inteligencia artificial estará listo para atender a cada cliente al instante. Cero complicaciones para ti.
+                                En menos de 7 días, tu sistema de inteligencia artificial estará listo para atender a cada cliente al instante.
                             </p>
                         </motion.div>
                     </div>
@@ -150,7 +153,10 @@ const ProcessSteps = () => {
                                     right: '32px',
                                     fontSize: '5rem',
                                     fontWeight: 900,
-                                    color: 'rgba(255, 255, 255, 0.15)',
+                                    background: 'linear-gradient(180deg, rgba(147, 197, 253, 0.3) 0%, rgba(147, 197, 253, 0) 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
                                     lineHeight: 1,
                                     pointerEvents: 'none',
                                     userSelect: 'none',
@@ -160,16 +166,25 @@ const ProcessSteps = () => {
                                 </div>
 
                                 <div style={{ position: 'relative', zIndex: 1 }}>
-                                    <h3 style={{ fontSize: '1.6rem', fontWeight: 500, color: '#fff', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+                                    <h3 style={{
+                                        fontSize: '1.6rem',
+                                        fontWeight: 500,
+                                        margin: '0 0 16px 0',
+                                        letterSpacing: '-0.02em',
+                                        background: 'linear-gradient(90deg, #fff 0%, var(--accent-color, #3b82f6) 100%)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        backgroundClip: 'text'
+                                    }}>
                                         {step.title}
                                     </h3>
 
                                     {index === 2 ? (
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.05rem', fontWeight: 400, lineHeight: 1.6, margin: 0 }}>
-                                            No lo dejamos solo. <span style={{ color: '#fff', fontWeight: 500 }}>Revisamos resultados, ajustamos respuestas y mejoramos el sistema cada mes.</span>
+                                        <p style={{ color: '#fff', fontSize: '1.05rem', fontWeight: 400, lineHeight: 1.6, margin: 0 }}>
+                                            No lo dejamos solo. <span style={{ color: '#fff', fontWeight: 600 }}>Revisamos resultados, ajustamos respuestas y mejoramos el sistema cada mes.</span>
                                         </p>
                                     ) : (
-                                        <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.05rem', fontWeight: 400, lineHeight: 1.6, margin: 0 }}>
+                                        <p style={{ color: '#fff', fontSize: '1.05rem', fontWeight: 400, lineHeight: 1.6, margin: 0 }}>
                                             {step.description}
                                         </p>
                                     )}

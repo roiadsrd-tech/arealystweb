@@ -5,7 +5,20 @@ import heroBg from '../assets/hero3.JPG';
 
 const DemoSection = () => {
     return (
-        <section style={{ padding: '160px 0 120px 0', marginTop: '-160px', position: 'relative', overflow: 'hidden', minHeight: '85vh', display: 'flex', alignItems: 'center', background: '#000' }}>
+        <section className="demo-section-container" style={{ padding: '160px 0 120px 0', marginTop: '-160px', position: 'relative', overflow: 'hidden', minHeight: '85vh', display: 'flex', alignItems: 'center', background: '#000' }}>
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                @media (max-width: 768px) {
+                    .demo-mobile-hide {
+                        display: none !important;
+                    }
+                    .demo-section-container {
+                        padding-bottom: 20px !important;
+                        min-height: auto !important;
+                    }
+                }
+                `
+            }} />
             {/* Background Image */}
             <div
                 style={{
@@ -54,7 +67,7 @@ const DemoSection = () => {
                             alignItems: 'center'
                         }}
                     >
-                        <p style={{
+                        <p className="demo-mobile-hide" style={{
                             fontSize: '1.1rem',
                             color: 'rgba(255, 255, 255, 0.6)',
                             fontWeight: 400,

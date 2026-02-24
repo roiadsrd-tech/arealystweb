@@ -108,6 +108,7 @@ const Features = () => {
                         display: none !important;
                     }
                     .features-main-headline {
+                        margin-top: 60px !important;
                         margin-bottom: -40px !important;
                     }
                     .agent-visual-container {
@@ -127,6 +128,12 @@ const Features = () => {
                         aspect-ratio: 16 / 9 !important;
                         margin-left: auto !important;
                         margin-right: auto !important;
+                    }
+                    .system-scaler {
+                        width: 560px !important;
+                        height: 315px !important;
+                        transform: scale(calc(min(90vw, 560px) / 560));
+                        transform-origin: top left;
                     }
                 }
                 `
@@ -176,7 +183,7 @@ const Features = () => {
                         style={{
                             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
                             textAlign: 'center',
-                            marginBottom: '240px',
+                            marginBottom: '100px',
                             fontWeight: 400,
                             letterSpacing: '-0.02em',
                             background: 'linear-gradient(90deg, #fff 0%, var(--accent-color, #3b82f6) 100%)',
@@ -211,7 +218,7 @@ const Features = () => {
                         transform: 'translate(-50%, -50%)',
                         width: '800px', height: '800px', borderRadius: '50%',
                         background: 'radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%)',
-                        filter: 'blur(100px)', zIndex: 0, pointerEvents: 'none'
+                        filter: 'blur(20px)', zIndex: 0, pointerEvents: 'none'
                     }} />
 
                     {/* Left Column: Text */}
@@ -298,7 +305,7 @@ const Features = () => {
                             width: '600px',
                             height: '600px',
                             background: 'radial-gradient(circle, rgba(147, 197, 253, 0.12) 0%, rgba(147, 197, 253, 0) 70%)',
-                            filter: 'blur(80px)',
+                            filter: 'blur(20px)',
                             zIndex: 1,
                             pointerEvents: 'none'
                         }}></div>
@@ -638,17 +645,11 @@ const Features = () => {
 
                                         {/* Background Glow removed */}
                                     </div>
-                                    <motion.div
-                                        variants={cardVariants}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: true }}
-                                        style={{ marginTop: '10px', zIndex: 20 }}
-                                    >
+                                    <div style={{ marginTop: '10px', zIndex: 20 }}>
                                         <Link to="/agent" className="btn btn-primary">
                                             EXPLORAR AGENT <span>›</span>
                                         </Link>
-                                    </motion.div>
+                                    </div>
                                 </div>
 
                                 {/* Button below cards for Mobile/Desktop */}
@@ -824,7 +825,7 @@ const Features = () => {
                                             className="system-main-container"
                                         >
 
-                                            <div style={{
+                                            <div className="system-scaler" style={{
                                                 width: '100%',
                                                 height: '100%',
                                                 background: '#f4f7f9',
@@ -1225,17 +1226,11 @@ const Features = () => {
 
                                         {/* Glow moved to parent level to center with screen */}
                                     </div>
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 1, delay: 0.5 }}
-                                        style={{ marginTop: '40px', zIndex: 20 }}
-                                    >
+                                    <div style={{ marginTop: '40px', zIndex: 20 }}>
                                         <Link to="/system" className="btn btn-primary">
                                             EXPLORAR SISTEMA <span>›</span>
                                         </Link>
-                                    </motion.div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1264,7 +1259,7 @@ const Features = () => {
                         transform: 'translate(-50%, -50%)',
                         width: '800px', height: '800px', borderRadius: '50%',
                         background: 'radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%)',
-                        filter: 'blur(100px)', zIndex: 0, pointerEvents: 'none'
+                        filter: 'blur(20px)', zIndex: 0, pointerEvents: 'none'
                     }} />
 
                     {/* Text Column */}
@@ -1361,16 +1356,16 @@ const Features = () => {
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={paymentIndex}
-                                    initial={{ y: 20, opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
-                                    animate={{ y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                                    exit={{ y: -20, opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
+                                    initial={{ y: 20, opacity: 0, scale: 0.9 }}
+                                    animate={{ y: 0, opacity: 1, scale: 1 }}
+                                    exit={{ y: -20, opacity: 0, scale: 0.95 }}
                                     transition={{
                                         duration: 0.8,
                                         ease: [0.16, 1, 0.3, 1]
                                     }}
                                     style={{
-                                        background: 'rgba(17, 24, 39, 0.8)',
-                                        backdropFilter: 'blur(20px)',
+                                        willChange: 'transform, opacity',
+                                        background: 'rgba(17, 24, 39, 0.95)',
                                         padding: '24px',
                                         borderRadius: '24px',
                                         textAlign: 'center',
@@ -1490,8 +1485,7 @@ const Features = () => {
                                     }}
                                     style={{
                                         position: 'absolute',
-                                        background: 'rgba(16, 185, 129, 0.05)',
-                                        backdropFilter: 'blur(4px)',
+                                        background: 'rgba(16, 185, 129, 0.1)',
                                         padding: '8px 16px',
                                         borderRadius: '100px',
                                         border: '1px solid rgba(16, 185, 129, 0.15)',
